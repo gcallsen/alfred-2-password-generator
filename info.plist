@@ -62,7 +62,7 @@ else
 	pwd_length={query}
 fi
 
-password=$(openssl rand -base64 $pwd_length)
+password=$(openssl rand -base64 $pwd_length | cut -c 1-$pwd_length)
 
 echo $password | tr -d '\n'</string>
 				<key>type</key>
